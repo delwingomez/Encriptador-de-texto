@@ -174,7 +174,7 @@ body{
 }
 
 .boton__copiar{
-    align-items: end;
+    align-items: center;
     background-color: var(--color-white);
     color: var(--color-dark-blue-300);
     font-family: var(--fuente-inter);
@@ -185,7 +185,9 @@ body{
     font-weight: 328;
     padding: 16px 0;
     width: 300px;
-    justify-items: end;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .boton__habilitado__desencriptar{
@@ -284,7 +286,7 @@ body{
 
     .boton__copiar{
         
-        width: 335px;
+        width: 100%;
         
     }
  
