@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="/style/style.css">
+   
+</head>
+<body>
+    <header></header>
+    <main class="ventana__encriptador">
+        <section class="logo">
+           <img src="/images/Logo.png" alt="Logo de alura"> 
+        </section>
+        <section class="primer__texto">
+            <textarea onclick="limpiarTextarea(this)" class="ingresarTexto" name="" id="primerTexto" oninput="validarEntrada(this)" rows="10">ingrese el texto aquí</textarea>
+            <div id="mensajeAdvertencia" class="mensaje-advertencia">No se aceptan caracteres especiales ni acentos</div>
+            <p class="comentario"><img src="/images/Group.png" alt="Icono de atención"> Solo letras minusculas y sin acentos</p>
+            <div class="botones__principales">
+                <input onclick="encriptar()" class="boton__habilitado" type="button" value="Encriptar">
+                <input class="boton__deshabilitado__desencriptar" id="boton_desencriptar" type="button" value="Desencriptar" >
+            </div>
+        </section>
+        <section class="segundo__texto">
+            <textarea class="textoOptenido__final" name="" id="textoEncriptado" rows="10"></textarea>
+            <input onclick="copiarTexto()" class="boton__copiar" type="button" value="Copiar">
+        </section>
+    </main>
+    <footer class="footer">Desarrollado por Delwin Gómez</footer>
+    <script src="/action/action.js"></script>
+    <script>
+        // Cargar el texto encriptado desde sessionStorage y mostrarlo en el textarea
+        window.onload = function() {
+            const textoEncriptado = sessionStorage.getItem('textoEncriptado');
+            if (textoEncriptado) {
+                document.getElementById('textoEncriptado').value = textoEncriptado;
+                // Limpiar sessionStorage después de obtener el texto encriptado
+                sessionStorage.removeItem('textoEncriptado');
+            }
+        }
+    </script>
+</body>
+</html>
